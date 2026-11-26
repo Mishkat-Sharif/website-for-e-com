@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopVibe — Modern E-Commerce Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bag-shopping"></i> Shop<span>Vibe</span>
+            </a>
+
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="nav__link active">Home</a>
+                <a href="#products" class="nav__link">Shop</a>
+                <a href="#categories" class="nav__link">Categories</a>
+                <a href="#deals" class="nav__link">Deals</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+
+            <div class="header__actions">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products…" />
+                    <button class="search-bar__btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <button class="icon-btn" title="Wishlist" id="wishlistBtn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" title="Cart" id="cartBtn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                <button class="icon-btn" title="Account" id="accountBtn">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero__overlay"></div>
+        <div class="container hero__content">
+            <p class="hero__tag">New Season Collection 2026</p>
+            <h1 class="hero__title">Elevate Your <br>Everyday Style</h1>
+            <p class="hero__subtitle">Discover handpicked products with up to <strong>50% off</strong> — free shipping on orders over $50.</p>
+            <div class="hero__cta">
+                <a href="#products" class="btn btn--primary btn--lg">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#deals" class="btn btn--outline btn--lg">View Deals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES BAR ========== -->
+    <section class="features">
+        <div class="container features__grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <h4>Free Shipping</h4>
+                    <p>On orders over $50</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h4>Secure Payment</h4>
+                    <p>100% protected</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-rotate-left"></i>
+                <div>
+                    <h4>Easy Returns</h4>
+                    <p>30-day return policy</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <h4>24/7 Support</h4>
+                    <p>Dedicated help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORIES ========== -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-sub">Browse our most popular categories</p>
+            <div class="categories__grid">
+                <div class="category-card" data-category="electronics">
+                    <div class="category-card__icon"><i class="fa-solid fa-laptop"></i></div>
+                    <h3>Electronics</h3>
+                    <p>42 Products</p>
+                </div>
+                <div class="category-card" data-category="fashion">
+                    <div class="category-card__icon"><i class="fa-solid fa-shirt"></i></div>
+                    <h3>Fashion</h3>
+                    <p>86 Products</p>
+                </div>
+                <div class="category-card" data-category="home">
+                    <div class="category-card__icon"><i class="fa-solid fa-couch"></i></div>
+                    <h3>Home & Living</h3>
+                    <p>35 Products</p>
+                </div>
+                <div class="category-card" data-category="sports">
+                    <div class="category-card__icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Sports</h3>
+                    <p>29 Products</p>
+                </div>
+                <div class="category-card" data-category="beauty">
+                    <div class="category-card__icon"><i class="fa-solid fa-spa"></i></div>
+                    <h3>Beauty</h3>
+                    <p>53 Products</p>
+                </div>
+                <div class="category-card" data-category="books">
+                    <div class="category-card__icon"><i class="fa-solid fa-book"></i></div>
+                    <h3>Books</h3>
+                    <p>71 Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Trending Products</h2>
+            <p class="section-sub">Our most popular picks this week</p>
+
+            <!-- Filter bar -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="electronics">Electronics</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="home">Home</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="beauty">Beauty</button>
+            </div>
+
+            <div class="products__grid" id="productsGrid">
+                <!-- Products are injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DEALS BANNER ========== -->
+    <section class="deals-banner" id="deals">
+        <div class="container deals-banner__inner">
+            <div class="deals-banner__text">
+                <p class="deals-banner__tag">Limited Time Offer</p>
+                <h2>Flash Sale — Up to <span>60% Off</span></h2>
+                <p>Hurry! These deals end soon. Grab your favourites before they're gone.</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown__block"><span id="cd-days">00</span><small>Days</small></div>
+                    <div class="countdown__block"><span id="cd-hours">00</span><small>Hours</small></div>
+                    <div class="countdown__block"><span id="cd-mins">00</span><small>Mins</small></div>
+                    <div class="countdown__block"><span id="cd-secs">00</span><small>Secs</small></div>
+                </div>
+                <a href="#products" class="btn btn--primary btn--lg">Shop the Sale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-sub">Real reviews from real shoppers</p>
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Absolutely love the quality! Fast shipping and the packaging was beautiful. Will definitely order again."</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar">SA</div>
+                        <div><strong>Sarah A.</strong><small>Verified Buyer</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p>"Great selection and unbeatable prices. Customer service was super helpful when I needed to exchange a size."</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar">MK</div>
+                        <div><strong>Michael K.</strong><small>Verified Buyer</small></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"ShopVibe is my go-to store now. The deals section always has something amazing. Five stars all around!"</p>
+                    <div class="testimonial-card__author">
+                        <div class="avatar">PR</div>
+                        <div><strong>Priya R.</strong><small>Verified Buyer</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter" id="contact">
+        <div class="container newsletter__inner">
+            <div class="newsletter__text">
+                <h2>Stay in the Loop</h2>
+                <p>Subscribe to get exclusive deals, new arrivals, and style tips delivered to your inbox.</p>
+            </div>
+            <form class="newsletter__form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit" class="btn btn--primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col">
+                <a href="index.html" class="logo logo--footer">
+                    <i class="fa-solid fa-bag-shopping"></i> Shop<span>Vibe</span>
+                </a>
+                <p>Your one-stop destination for quality products at unbeatable prices. Shop smart, live better.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Shop</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer__col">
+                <h4>Customer Service</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Order Tracking</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 123 Commerce St, NY 10001</p>
+                <p><i class="fa-solid fa-envelope"></i> hello@shopvibe.com</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 ShopVibe. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="close-btn" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-sidebar__items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-sidebar__footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn--primary btn--block" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- ========== QUICK VIEW MODAL ========== -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="quickViewModal">
+        <button class="close-btn modal__close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal__body" id="modalBody">
+            <!-- filled by JS -->
+        </div>
+    </div>
+
+    <!-- ========== TOAST ========== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
